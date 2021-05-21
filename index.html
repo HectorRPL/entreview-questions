@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test</title>
+</head>
+<body>
+
+
+<script>
+
+
+    /*if (navigator && navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(position => {
+            console.log(position);
+        }, positionError => {
+            console.log('The user don accept location.');
+        });
+    } else {
+        console.log('Geolocation is not supported by this browser.');
+    }*/
+
+    function getUserDataAsync() {
+        if (navigator?.geolocation) {
+            return new Promise((resolve, reject) => navigator.geolocation.getCurrentPosition(resolve, reject)
+)
+        } else {
+            return new Promise(resolve => resolve({}))
+        }
+    }
+
+    getUserDataAsync()
+        .then(value => console.log(value))
+        .catch(error => {
+            let msg = null;
+            switch(error.code) {
+                case error.PERMISSION_DENIED:
+                    msg = "User denied the request for Geolocation.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    msg = "Location information is unavailable.";
+                    break;
+                case error.TIMEOUT:
+                    msg = "The request to get user location timed out.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    msg = "An unknown error occurred.";
+                    break;
+            }
+            alert(msg);
+            }
+        );
+
+
+    async function getAddress() {
+        const position = await getCoordinates();
+        console.log(position);
+
+    }
+
+    function getCoordinates() {
+        return new Promise(function(resolve, reject) {
+            navigator.geolocation.getCurrentPosition(resolve, reject);
+        });
+    }
+
+    getAddress();
+
+
+</script>
+
+</body>
+</html>
