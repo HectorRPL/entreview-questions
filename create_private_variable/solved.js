@@ -1,21 +1,5 @@
 function secretVariable() {
     var privateVariable = 'super secret code';
-}
-
-// my try
-
-function secretVariable() {
-    {
-        privateVariable: 'super secret code'
-    }
-}
-
-
-// solution
-
-
-function secretVariable() {
-    var privateVariable = 'super secret code';
     return function () {
         return privateVariable
     };

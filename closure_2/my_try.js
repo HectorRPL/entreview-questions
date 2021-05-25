@@ -10,5 +10,5 @@ let f = () => {
 console.dir(f()); // [Function (anonymous)]
 console.log(f()); // [Function (anonymous)]
 
-const myTru = f();
-myTru();
+const myTry = f();
+myTry();

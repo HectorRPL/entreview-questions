@@ -1,4 +1,4 @@
-// get the longest string abc
+// get the longest string from arrayOne and arrayTwo
 
 const arrayOne = ['a', 'bb', 'ccc']; // get "ccc"
 
