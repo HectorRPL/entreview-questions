@@ -7,7 +7,7 @@ instructions of solution 1
 
 const string = 'apple';
 
-// solved bu youtuber
+// solved by youtuber
 
 const revString = (word = '') => { // hello World!
     // turn the string into array by split it
@@ -16,7 +16,4 @@ const revString = (word = '') => { // hello World!
     word = arr.join('');
     console.log(word);
 };
-
-
-// I improve the code of youtuber with 'data structures' of my course
 

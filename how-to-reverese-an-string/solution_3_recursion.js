@@ -1,5 +1,5 @@
 // no le entiendo:
-function reverse(word) {
+const reverse = word => {
     if (word.length === 0) return '';
     const item = word.substring(0, word.length - 1);
     // 1234
@@ -9,7 +9,8 @@ function reverse(word) {
     // return:
     return word[word.length - 1] + reverse(item);
 }
-reverse('12345');
+
+console.log(reverse('12345'));
 
 
 /*
