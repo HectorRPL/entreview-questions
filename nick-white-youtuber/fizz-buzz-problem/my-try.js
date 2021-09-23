@@ -2,7 +2,7 @@
 
 FIZZBUZZ
 
-The FizzBuzz problem is a classic test
+The FizzBuzz step-counter-between-two-integers is a classic test
 given in coding interviews. The task is
 simple:
 
