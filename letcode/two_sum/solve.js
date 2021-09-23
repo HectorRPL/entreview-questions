@@ -5,24 +5,25 @@ function twoSum(numbersArray, target) {
     const length = numbersArray.length; // Always put the length outside of for(i). Increases the complexity
 
     for (let i = 0; i < length; i++) {
-        // console.log('complement ', complement);
-        // console.log('nums[i] ', numbersArray[i]);
-        // console.log('complement[numbersArray[i]] ', complement[numbersArray[i]]);
-        // console.log(complement[numbersArray[i]] >= 0);
+        // console.log('numbersArray[i] => ', numbersArray[i]);
+        // console.log('complement => ', complement);
+
         if (complement[numbersArray[i]] >= 0) {
+            console.log('complement[numbersArray[i]] =>', complement[numbersArray[i]]);
             const something = complement[numbersArray[i]]; // {0:}
             return [something, i];
         }
-        const what = [target - numbersArray[i]]; // => ???
-        complement[what] = i;
-        console.log(what);
-        // console.log('=> ', complement);
+        const targetMinusIPosition = target - numbersArray[i]; // 24, 19, 18
+        // console.log('targetMinusIPosition => ', targetMinusIPosition);
+        complement[targetMinusIPosition] = i;
+        // console.log('complement => ', complement); // { '24': 0 } ... { '19': 1, '24': 0 } ... { '15': 2, '19': 1, '24': 0 }
     }
 
     return [];
 }
 
-console.log(twoSum([2, 7, 11, 15], 26));
+twoSum([2, 7, 11, 15], 26);
+
 
 
 
