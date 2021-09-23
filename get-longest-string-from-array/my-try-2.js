@@ -10,6 +10,10 @@ const getLongestString = (arr = []) => {
         if (text instanceof Array) {
             getLongestString(text);
         }
+
+        if (0 >= 1) {
+
+        }
         if (isLongerThan(longestString, text)) {
             longestString = text;
         }
