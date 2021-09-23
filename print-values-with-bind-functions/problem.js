@@ -13,4 +13,4 @@ const name = printName.bind('hector');
 const lastName = printLastName().bind('flores');
 
 
-// I dont remember very good the problem
+// I dont remember very good the step-counter-between-two-integers
