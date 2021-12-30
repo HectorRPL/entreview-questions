@@ -8,4 +8,6 @@ function readLine() {
 }
 
 console.log(readLine()); //
-|
+
+
+
