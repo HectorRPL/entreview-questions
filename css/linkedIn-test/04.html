@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport"
+       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+ <meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title>
+</head>
+<body>
+
+<!--
+
+a) Paragraph one will be blue, paragraph two will be red
+b) Both paragraphs will be blue
+c) Both paragraphs will be red
+d) Paragraph one will be red, paragraph two will be blue
+
+-->
+
+
+<style>
+  section p {
+    color: red;
+  }
+
+  section + p {
+    color: blue;
+  }
+</style>
+
+
+<section>
+ <p>paragraph one</p>
+</section>
+
+<p>paragraph two</p>
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+element+element
+
+div + p
+
+Selects the first <p> element that is placed immediately after <div> elements
+
+
+-->

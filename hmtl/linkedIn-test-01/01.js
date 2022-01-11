@@ -1,4 +1,4 @@
-// What this ode print to the console?
+// What this code print to the console?
 
 let rainForesAcres = 10;
 let animals = 0;

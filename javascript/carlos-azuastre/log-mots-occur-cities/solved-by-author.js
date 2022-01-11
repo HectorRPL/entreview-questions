@@ -138,13 +138,15 @@ const citiesList = [
 ];
 
 function logMotsOccurCities(numCities) {
+
+  // fn => [{name: numValue}, {...}, {...}, {...}]
   const cities = {};
   citiesList.forEach(city => {
-    cities[city] =  !cities[city] ? 1 : cities[city] += 1;
+    cities[city] = (!cities[city] ? 1 : cities[city] += 1);
   });
 
   return Object
-    .keys(cities)
+    .keys(cities)// => convert objet to array (only keys)
     .map(city => ({name: city, times: cities[city]}))
     .sort((a, b) => b.times - a.times)
     .slice(0, numCities)

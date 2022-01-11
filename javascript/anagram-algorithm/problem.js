@@ -10,10 +10,10 @@ rearranged into nag a ram, also the word
 binary into brainy and the word adobe
 into abode.
 
-fried = friend
+This is an anagram e.g.
+
 gainly = laying
-sadder = dreads
 listen = silent
 
- */
+*/
 
