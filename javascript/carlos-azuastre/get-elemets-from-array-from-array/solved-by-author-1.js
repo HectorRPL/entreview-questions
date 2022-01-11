@@ -10,11 +10,11 @@ const result = post
     return [...allTags, ...post.tags];
   }, [])
   .filter((post, index, array) => {
+    console.log('array = ', array);
     console.log('post = ', post);
     console.log('index = ', index);
-    console.log('array = ', array);
     console.log('indexOf = ', array.indexOf(post));
-    console.log('----------------');
+    console.log('------------------------------------------------');
 
     return index === array.indexOf((post)) // search idx in the array
   });
