@@ -7,5 +7,4 @@ let f = () => {
   }
 }
 
-console.dir(f()); // [Function (anonymous)]
-console.log(f()); // [Function (anonymous)]
+f()();

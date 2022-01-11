@@ -1,3 +1,5 @@
+// Print i and j variables
+
 let f = () => {
   let i = 1;
   let j = 2;
@@ -9,6 +11,3 @@ let f = () => {
 
 console.dir(f()); // [Function (anonymous)]
 console.log(f()); // [Function (anonymous)]
-
-const myTry = f();
-myTry();
