@@ -14,7 +14,15 @@ const createArrayWithOneLevel = (arr = []) => arr
 const main = (arr1, arr2) => {
   const normalizedArr1 = createArrayWithOneLevel(arr1);
   const normalizedArr2 = createArrayWithOneLevel(arr2);
-  return normalizedArr1.reduce((accum, number, idx, originalArr) => accum + (normalizedArr2[idx] - number), 0);
+
+  const obj = {};
+  normalizedArr1.forEach((number, idx, original) => obj[idx] = normalizedArr2[idx] - number);
+
+  return Object
+    .keys(obj)
+    .reduce((acc, idx) => {
+      return acc + obj[idx];
+    }, 0);
 }
 
 console.log(main(arr1, arr2));
