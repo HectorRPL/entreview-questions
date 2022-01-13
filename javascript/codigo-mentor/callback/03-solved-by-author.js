@@ -1,4 +1,3 @@
-// Print first "F1"
 const f1 = (callback) => {
   setTimeout(() => {
     console.log('F1');
