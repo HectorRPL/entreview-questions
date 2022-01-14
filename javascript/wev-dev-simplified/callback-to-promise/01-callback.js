@@ -10,9 +10,5 @@ function watchTutorialCallback(callback, errorCallback) {
 }
 
 watchTutorialCallback(
-  (message) => {
-    console.log('Success + ', message)
-  },
-  (error) => {
-    console.log(error.name + error.message);
-  })
+  (message) => console.log('Success + ', message),
+  (error) => console.log(error.name + error.message))
