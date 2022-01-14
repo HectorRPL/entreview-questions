@@ -1,14 +1,18 @@
 // https://www.youtube.com/watch?v=DHvZLI7Db8E
-// Convert this to a promise
+// Convert this into a promise
 
-const success = true;
+const success = false;
 
-function watchTutorialCallback(callback, errorCallback) {
-  success
-    ? callback('thumbs up and subscribe')
-    : errorCallback({name: 'user left', message: ':('})
+function watchTutorialPromise() {
+  return new Promise((resolve, reject) => {
+    success
+      ? resolve('thumbs up and subscribe')
+      : reject({name: 'user left', message: ':('})
+  })
 }
 
-watchTutorialCallback(
-  (message) => console.log('Success + ', message),
-  (error) => console.log(error.name + error.message))
+watchTutorialPromise()
+  .then((message) => console.log('Success + ', message))
+  .catch((error) => console.log(error.name + error.message))
+
+
