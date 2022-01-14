@@ -1,10 +1,10 @@
 function printName() {
-    console.log(this.name);
+  console.log(this.name);
 }
 
 
 function printLastName() {
-    console.log(this.lastName);
+  console.log(this.lastName);
 }
 
 
