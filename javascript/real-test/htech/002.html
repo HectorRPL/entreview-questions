@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test</title>
+</head>
+<body>
+
+<button id="btn">HELLO</button>
+
+<script>
+  (function () {
+    document
+      .getElementById('btn')
+      .addEventListener('click', handler);
+
+    function handler() {
+      console.log('click!');
+    }
+
+    // this is bad
+    fetch('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8')
+      .then(resp => {
+        console.log('resp -> ',resp);
+        var serialized = resp.json();
+        console.log('resp -> ', serialized);
+      })
+      .then(data => console.log(data))
+      .catch(reason => console.log(reason));
+
+    // this is good
+    fetch('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8')
+      .then(resp => resp.json())
+      .then(data => console.log('resp -> ', data));
+
+  })();
+
+</script>
+
+</body>
+</html>

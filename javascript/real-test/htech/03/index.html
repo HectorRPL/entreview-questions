@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+
+<script>
+  function loadURL(url) {
+    return new Promise(function (resolve, reject) {
+      var request = new XMLHttpRequest();
+      request.open('GET', url);
+
+      request.onload = function () {
+        if (request.status === 200) {
+          resolve(request.response);
+        } else {
+          reject(new Error(request.status));
+        }
+      };
+
+      request.onerror = function () {
+        reject(new Error('Network Error'));
+      };
+
+      request.send();
+
+    })
+      .then(res => console.log('Success:' + res))
+      .catch(err => console.log(err))
+      .then(res => console.log(res));
+
+  }
+
+  loadURL('https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8/');
+
+  /*
+
+  Select all correct statements if the GET request to
+  "https://mocki.io/v1/d4867d8b-b5d5-4a48-a4ab-79131b5809b8" returns "Done"
+  (Select all acceptable answers)
+
+  [ x ] Catch callback executes for any reject call
+  [   ] The first the method of the loadURL method will print "Success:Done" in the console for a successful GET request to "http://example.com"
+  [   ] The second then callback method is never called
+  [   ] The first then method of the loadURL method will print "Success:undefined" in the console for a successful GET request to "http://example.com"
+  [   ] The second then method always print the same res object as the first then method
+  [ x ] The second then callback method is always called
+
+  */
+
+</script>
+
+
+</body>
+</html>
