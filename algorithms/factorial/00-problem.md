@@ -4,11 +4,13 @@ Today, we're discussing JavaScript functions. Check out the attached tutorial fo
 
 Task
 
-Implement a function named factorial that has one parameter: an integer, . It must return the value of  (i.e.,  factorial).
+Implement a function named factorial that has one parameter: an integer.
+It must return the value of  (i.e.,  factorial).
 
 Input Format
 
-Locked stub code in the editor reads a single integer, , from stdin and passes it to a function named factorial.
+Locked stub code in the editor reads a single integer,
+from stdin and passes it to a function named factorial.
 
 Constraints
 

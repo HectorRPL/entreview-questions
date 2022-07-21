@@ -1,7 +1,7 @@
-function factorial(x) {
-  if (x === 0) return 1;
-  // 4 x 3 x 2 x 1
-  return x * factorial(x - 1);
+function getFactorial(number) {
+  if (number === 0) return 1;
+  // 4 = 4 x 3 x 2 x 1
+  return number * getFactorial(number - 1);
 }
 
-console.log(factorial(4)); // 24
+console.log(getFactorial(4)); // 24

@@ -1,6 +1,7 @@
 const s1 = 'aba';
 const s2 = 'zz';
 const s3 = 'codility';
+const s4 = 'pepe';
 
 const result = (word = '') => {
     const obj = {};
@@ -36,3 +37,5 @@ const result = (word = '') => {
 console.log(result(s1));
 console.log(result(s2));
 console.log(result(s3));
+console.log(result(s4));
+
