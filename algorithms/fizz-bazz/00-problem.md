@@ -1,10 +1,10 @@
 FIZZBUZZ
 
-Print integers 1 to N, but print “Fizz”
-if an integer is divisible by 3, “Buzz”
-if an integer is divisible by 5, and
-“FizzBuzz” if an integer is divisible
-by both 3 and 5.
+Print integers 1 to N
+But print:
 
-source:
-  https://youtu.be/_DvSIoQKBac
+If an integer is divisible by 5: “Buzz”
+If an integer is divisible by 3: “Fizz”
+If an integer is divisible by both 3 and 5: “FizzBuzz”
+
+source: https://youtu.be/_DvSIoQKBac

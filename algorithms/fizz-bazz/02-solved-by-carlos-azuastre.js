@@ -1,11 +1,14 @@
-const n = 15;
+const generateNumberArray = (number = 0) => {
+  // creates an array with sorted numbers e.g. (3) => [0,1,2]
+  return Array
+    .apply(null, {length: number})
+    .map(Number.call, Number)
+    .slice(1); // remove the first element, witch is zero, and zero can't be divided in this program
+}
 
 const fizzBuzz = (number) => {
-  // generate array
-  const numbers = [];
-  for (let i = 0; i < number + 1; i++) {
-    numbers.push(i);
-  }
+
+  const numbers = generateNumberArray(number);
 
   numbers.forEach(number => { // TODO the big step-counter-between-two-integers is doing with a 'for'
     const isFizz = number % 3 === 0;
@@ -34,5 +37,4 @@ const fizzBuzz = (number) => {
 
 }
 
-
-fizzBuzz(n);
+fizzBuzz(15);
