@@ -1,4 +1,5 @@
-const s = 'ABEC';
+const s1 = 'ABEC';
+const s2 = 'ABECZ';
 
 const VOWELS = {
     a: 'a',
@@ -16,7 +17,10 @@ const result = (word = '') => {
 
 
     for (let index = 0; index < wordLength; index++) {
-        isAmazingString(charactersArray[index]) ? total += wordLength - index : null;
+        const nextStringLength = wordLength - index;
+        isAmazingString(charactersArray[index])
+            ? (total += nextStringLength)
+            : null;
     }
 
     return total;
@@ -28,4 +32,4 @@ const isAmazingString = (vowel = '') => {
 }
 
 
-console.log(result(s));
+result(s1);
