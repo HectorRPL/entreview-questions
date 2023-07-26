@@ -15,13 +15,14 @@ function repeatedWords(text) {
     let separatedWords = text.split(' ');
 
     for (let word of separatedWords) {
-        // if property exist in object then ...
-        if (normalizeWord(word) in dictionary) {
+        // if property exist in object then add it...
+        const normalizedWord = normalizeWord(word);
+        if (normalizedWord in dictionary) {
             // sum +1 to property with that property
-            ++dictionary[normalizeWord(word)];
+            ++dictionary[normalizedWord];
         } else {
             // create the property with start value in 1
-            dictionary[normalizeWord(word)] = 1;
+            dictionary[normalizedWord] = 1;
         }
     }
     return dictionary;

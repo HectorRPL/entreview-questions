@@ -5,8 +5,7 @@ const post = [
 ];
 
 
-const result = post
-  .reduce((allTags, post) => {
+const result = post.reduce((allTags, post) => {
     return Array.from(new Set([...allTags, ...post.tags]));
   }, []);
 

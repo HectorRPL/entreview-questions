@@ -1,37 +1,46 @@
-# by my test in reuters
+# My test in reuters
 ## Task Description
 
-Amy has an array, nums, of n positive integers
-and another array, maxes, of m positive
+Amy has an array, nums, of `n` positive integers
+and another array, maxes, of `m` positive
 integers. For each maxes, in maxes, she wants
 to know the total number of elements in nums
 which are less than or equal to that maxes.
 
 For example, if :
-nums = [1,2,3]
-maxes = [2,4]
 
-Then there are 2 elements in nums that are =< maxes (which is 2)
-and 3 elements in nums that are =< maxes (which is 4).
-We can store this respective answers in another array answer = [2,3]
+    nums = [1, 2, 3]
+    maxes = [2, 4]
+
+Then there are:
+- 2 elements in nums that are =< maxes (which is 2)
+- and 3 elements in nums that are =< maxes (which is 4).
+- 
+We can store this respective answers in another array:
+
+    answer = [2, 3]
 
 The counts function must return an array of
-m positive integers in which the integer
+`m` positive integers in which the integer
 at each index (where 0 =< i < m) denotes
 the total number of elements (where 0 =< j < n)
 satisfying nums =< maxes
 
 Sample Input
 
-nums = [1,4,2,4]
-maxes = [3,5]
+    nums = [1, 4, 2, 4]
+    maxes = [3, 5]
 
-Sample Output = [2,4]
+Sample
+
+    Output = [2, 4]
 
 For maxes = 3 we have two elements in nums (nums = 1 and nums = 2)
 that are =< maxes For maxes = 5 we have four elements in nums (nums = 1; nums = 4, nums = 2, nums = 4) that are =< maxes
 
-Thus function must return the array [2,4]
+Thus function must return the array:
+
+    [2, 4]
 
 Complete the counts function in the editor below. It has two parameters:
 
@@ -69,7 +78,6 @@ Each line i of the m subsequent lines (where 0 ≤ i < m) contains an integer de
 The function must return an array of m integers where the value stored at each index i (where 0 ≤ i < m) denotes the total number of elements numsj (where 0 ≤ j < n) satisfying numsj ≤ maxesi. This is printed to stdout by locked stub code in the editor.
 
 
-
 ## Sample Input 0
 
     4
@@ -92,11 +100,10 @@ The function must return an array of m integers where the value stored at each i
 
 We are given n = 4, nums = [1, 4, 2, 4], m = 2, and maxes = [3, 5].
 
-For maxes0 = 3, we have two elements in nums (nums0 = 1 and nums2 = 2) that are ≤ maxes0.
-For maxes1 = 5, we have four elements in nums (nums0 = 1, nums1 = 4, nums2 = 2, and nums3 = 4) that are ≤ maxes1.
-Thus, the function returns the array [2, 4] as the answer.
+For `maxes0 = 3`, we have two elements in nums (nums0 = 1 and nums2 = 2) that are ≤ maxes0.
 
-
+For `maxes1 = 5`, we have four elements in nums (nums0 = 1, nums1 = 4, nums2 = 2, and nums3 = 4) that are ≤ maxes1.
+Thus, the function returns the array `[2, 4]` as the answer.
 
 ## Sample Input 1
 
@@ -123,7 +130,12 @@ Thus, the function returns the array [2, 4] as the answer.
 
 ## Explanation 1
 
-We are given, n = 5, nums = [2, 10, 5, 4, 8], m = 4, and maxes = [3, 1, 7, 8].
+We are given:
+
+    n = 5
+    nums = [2, 10, 5, 4, 8]
+    m = 4
+    maxes = [3, 1, 7, 8]
 
 For maxes0 = 3, we have one element in nums (nums0 = 2) that is ≤ maxes0.
 For maxes1 = 1, there are zero elements in nums that are ≤ maxes1.

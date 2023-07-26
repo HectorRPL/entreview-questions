@@ -1,8 +1,8 @@
 const dictionary = {
-  'number': (arrScores = [], newScore) => recordNewScore(arrScores, newScore),
-  '+': (arrScores) => addSumPrevTwoValues(arrScores),
-  'D': (arrScores) => addDoublePrevValue(arrScores),
-  'C': (arrScores) => invalidatePrevValue(arrScores),
+    'number': (arrScores = [], newScore) => recordNewScore(arrScores, newScore),
+    '+': (arrScores) => addSumPrevTwoValues(arrScores),
+    'D': (arrScores) => addDoublePrevValue(arrScores),
+    'C': (arrScores) => invalidatePrevValue(arrScores),
 };
 
 const recordNewScore = (arrScores = [], newScore) => [...arrScores, ...[newScore]];
@@ -11,15 +11,15 @@ const addDoublePrevValue = (arrScores) => [...arrScores, ...[arrScores[arrScores
 const invalidatePrevValue = (arrScores = []) => [...arrScores.slice(0, arrScores.length - 1)];
 
 const callPoints = function (ops = []) {
-  let result = [];
-  for (let i = 0; i < ops.length; i++) {
-    const operation = isNaN(ops[i]) ? ops[i] : 'number';
-    operation === 'number'
-      ? result = dictionary[operation](result, parseInt(ops[i]))
-      : result = dictionary[operation](result);
-  }
+    let result = [];
+    for (let i = 0; i < ops.length; i++) {
+        const operation = isNaN(ops[i]) ? ops[i] : 'number';
+        operation === 'number'
+            ? result = dictionary[operation](result, parseInt(ops[i]))
+            : result = dictionary[operation](result);
+    }
 
-  return result.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+    return result.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 }
 
 const case1 = ['5', '2', 'C', 'D', '+']; // 30

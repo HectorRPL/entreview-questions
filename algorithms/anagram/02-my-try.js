@@ -1,11 +1,14 @@
 const splitAndSortString = (str) => {
-    return str.split('').sort((letterA, letterB) => {
-        return (letterA < letterB)
-            ? -1
-            : (letterA > letterB)
-                ? 1
-                : 0;
-    }).join();
+    return str
+        .split('')
+        .sort((letterA, letterB) => {
+            return (letterA < letterB)
+                ? -1
+                : (letterA > letterB)
+                    ? 1
+                    : 0;
+        })
+        .join();
 }
 
 const main = (stringOne, stringTwo) => {
