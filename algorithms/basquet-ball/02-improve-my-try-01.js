@@ -5,26 +5,30 @@ const dictionary = {
     'C': (arrScores) => invalidatePrevValue(arrScores),
 };
 
-const recordNewScore = (arrScores = [], newScore) => [...arrScores, ...[newScore]];
-const addSumPrevTwoValues = (arrScores) => [...arrScores, ...[arrScores[arrScores.length - 1] + arrScores[arrScores.length - 2]]];
-const addDoublePrevValue = (arrScores) => [...arrScores, ...[arrScores[arrScores.length - 1] * 2]];
-const invalidatePrevValue = (arrScores = []) => [...arrScores.slice(0, arrScores.length - 1)];
+const recordNewScore = (arrScores = [], newScore) => [...arrScores, ...[newScore]]
+const addSumPrevTwoValues = (arrScores) => [...arrScores, ...[arrScores[arrScores.length - 1] + arrScores[arrScores.length - 2]]]
+const addDoublePrevValue = (arrScores) => [...arrScores, ...[arrScores[arrScores.length - 1] * 2]]
+const invalidatePrevValue = (arrScores = []) => [...arrScores.slice(0, arrScores.length - 1)]
 
 const callPoints = function (ops = []) {
-    let result = [];
+    let result = []
     for (let i = 0; i < ops.length; i++) {
-        const operation = typeof ops[i] === 'number' ? 'number' : ops[i];
+
+        const operation = typeof ops[i] === 'number' ? 'number' : ops[i]
+
+        // llamamos las operaciones segun la operación que debemos realizar
         operation === 'number'
             ? result = dictionary[operation](result, ops[i])
-            : result = dictionary[operation](result);
+            : result = dictionary[operation](result)
     }
 
-    return result.reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+    // realizar la suma de los puntajes
+    return result.reduce((previousValue, currentValue) => previousValue + currentValue, 0)
 }
 
-const case1 = [5, 2, 'C', 'D', '+']; // 30
-const case2 = [5, -2, 4, 'C', 'D', 9, '+', '+']; // 27
-const case3 = [1]; // 27
+const case1 = [5, 2, 'C', 'D', '+'] // 30
+const case2 = [5, -2, 4, 'C', 'D', 9, '+', '+'] // 27
+const case3 = [1] // 27
 console.log('case1 = ' + callPoints(case1));
 console.log('case2 = ' + callPoints(case2));
 console.log('case3 = ' + callPoints(case3));

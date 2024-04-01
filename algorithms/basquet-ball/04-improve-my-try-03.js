@@ -13,10 +13,12 @@ const invalidatePrevValue = (arrScores = []) => [...arrScores.slice(0, arrScores
 const callPoints = function (ops = []) {
     let result = [];
     for (let i = 0; i < ops.length; i++) {
-        const operation = isNaN(ops[i]) ? ops[i] : 'number';
+        const operation = isNaN(ops[i]) ? ops[i] : 'number'
         operation === 'number'
             ? result = dictionary[operation](result, parseInt(ops[i]))
-            : result = dictionary[operation](result);
+            : result = dictionary[operation](result)
+
+        console.log('result => ', operation + ' ' + result);
     }
 
     return result.reduce((previousValue, currentValue) => previousValue + currentValue, 0);

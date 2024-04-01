@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Input Validation</title>
+</head>
+<body>
+<label for="birthdate">Select your birthdate:</label>
+<input type="date" id="birthdate" max="" min="">
+<p id="ageDisplay"></p>
+<script>
+    const input = document.getElementById('birthdate');
+    const ageDisplay = document.getElementById('ageDisplay');
+
+    // Calculate minimum and maximum birthdates for the allowed age range
+    const currentDate = new Date();
+    const minDate = new Date(currentDate);
+    minDate.setFullYear(minDate.getFullYear() - 99);
+    const maxDate = new Date(currentDate);
+    maxDate.setFullYear(maxDate.getFullYear() - 22);
+
+    // Convert the minimum and maximum dates to ISO format (YYYY-MM-DD)
+    const minDateISO = minDate.toISOString().split('T')[0];
+    const maxDateISO = maxDate.toISOString().split('T')[0];
+
+    // Set the min and max attributes of the input element
+    input.min = minDateISO;
+    input.max = maxDateISO;
+
+    // Calculate and display the age when user selects a birthdate
+    input.addEventListener('input', () => {
+        const selectedDate = new Date(input.value);
+        const ageInMilliseconds = currentDate - selectedDate;
+        const ageDate = new Date(ageInMilliseconds);
+        const years = ageDate.getUTCFullYear() - 1970;
+        const months = ageDate.getUTCMonth();
+        const days = ageDate.getUTCDate() - 1;
+
+        ageDisplay.textContent = `Your age is ${years} years, ${months} months, and ${days} days.`;
+    });
+</script>
+</body>
+</html>

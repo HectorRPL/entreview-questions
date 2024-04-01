@@ -6,6 +6,8 @@ Then 'c' returns:
 
     ['h', 'e', 'c', 't', 'o', 'r', 'gabi'];
 
+    is good, because I don nedd split for eparate array
+
 When you set three dots operator (...) to create
 a new array, but you are sending an string
 'hector' then you will get an array for each

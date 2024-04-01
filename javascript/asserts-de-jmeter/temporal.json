@@ -1,0 +1,31 @@
+{
+  "data": {
+    "response": {
+      "catalogue": [
+        {
+          "code": "M",
+          "description": "Multianual"
+        },
+        {
+          "code": "A",
+          "description": "Anual"
+        }
+      ]
+    },
+    "informedParams": {
+      "vehUseCd": "0",
+      "catalogue": "VIGENCIAS"
+    }
+  },
+  "axaHeaderRes": {
+    "resultado": {
+      "codigo": "6",
+      "mensaje": "Transaccion exitosa",
+      "subcodigo": "200"
+    },
+    "fechaHora": "2023-12-04T05:17:48-06:00",
+    "sistemald": "HSBC",
+    "usuario": "MXS00102030A",
+    "UUID": "c87dc3e1-eaef-444a-bb4f-37daf528d3c3"
+  }
+}
