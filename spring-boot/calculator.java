@@ -1,33 +1,24 @@
-// Configuración de Spring
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.context.annotation.Configuration;
-
-@Configuration
-public class AppConfig {
-    // Configuración de los beans
-}
-
 // Clase principal de la aplicación
-public class MainApp {
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+@SpringBootApplication
+public class SpringBootApp {
     public static void main(String[] args) {
-        // Crear el contexto de Spring
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(AppConfig.class);
-
-        // Obtener el bean de la calculadora
-        Calculator calculator = context.getBean(Calculator.class);
-
-        // Sumar dos números
-        int sum = calculator.add(10, 20);
-        System.out.println("La suma de 10 y 20 es: " + sum);
-
-        // Cerrar el contexto de Spring
-        context.close();
+        SpringApplication.run(SpringBootApp.class, args);
     }
 }
 
-// Calculadora
-public class Calculator {
-    public int add(int a, int b) {
+// Controlador para sumar números
+import org.springframework.web.bind.annotation.GetMapping;
+        import org.springframework.web.bind.annotation.RequestParam;
+        import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+public class CalculatorController {
+    @GetMapping("/sum")
+    public int sum(@RequestParam("a") int a, @RequestParam("b") int b) {
         return a + b;
     }
 }
+

@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>GENTERA</title>
+</head>
+<body>
+
+    <style>
+        .red {
+            color: red;
+        }
+    </style>
+
+
+    <label for="inputText"></label>
+    <input type="text" id="inputText"/>
+    <button id="addText">ADD</button>
+
+    <ul id="list"></ul>
+
+    <script>
+        document.getElementById('addText').addEventListener("click", displayData)
+        const inputText  = document.getElementById('inputText')
+        inputText.addEventListener('keypress', function(event) {
+            if (event.keyCode === 13) displayData()
+        })
+
+        const displayDataAndFocus = () => inputText.focus()
+        function displayData() {
+            displayDataAndFocus()
+            let text = document.getElementById('inputText').value
+            let list = document.getElementById('list')
+            if (!!!text) return
+
+            const length = document
+                .getElementById('list')
+                .getElementsByTagName('li').length + 1
+
+            if (length % 3 === 0) list.innerHTML = list.innerHTML + '<li class="red">' + text + '</li>'
+            else list.innerHTML = list.innerHTML + '<li>' + text + '</li>'
+
+            document.getElementById('inputText').value = ''
+
+        }
+    </script>
+
+</body>
+</html>

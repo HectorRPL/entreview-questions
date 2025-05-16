@@ -1,0 +1,1 @@
+Write an immediately invoked function expression (IIFE)

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequency Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+<h1>Frequency Table</h1>
+<table id="frequency-table">
+    <thead>
+    <tr>
+        <th>Octave</th>
+        <th>C</th>
+        <th>C#</th>
+        <th>D</th>
+        <th>Eb</th>
+        <th>E</th>
+        <th>F</th>
+        <th>F#</th>
+        <th>G</th>
+        <th>G#</th>
+        <th>A</th>
+        <th>Bb</th>
+        <th>B</th>
+    </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+<script>
+    function generateFrequencies(tuning = 440) {
+        const notes = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B'];
+        const baseFrequencies = tuning === 432 ? [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 29.14, 30.87]
+            : [16.35, 17.32, 18.35, 19.45, 20.60, 21.83, 23.12, 24.50, 25.96, 27.50, 29.14, 30.87];
+
+        const octaves = Array.from({length: 9}, (_, i) => i);
+        const frequencies = {};
+
+        notes.forEach((note, index) => {
+            frequencies[note] = octaves.map(octave => baseFrequencies[index] * Math.pow(2, octave));
+        });
+
+        return frequencies;
+    }
+
+    function renderTable(tuning = 440) {
+        const frequencies = generateFrequencies(tuning);
+        const tableBody = document.getElementById('frequency-table').querySelector('tbody');
+        tableBody.innerHTML = ''; // Clear the table body
+
+        for (let octave = 0; octave < 9; octave++) {
+            const row = document.createElement('tr');
+            const octaveCell = document.createElement('td');
+            octaveCell.textContent = `Octave ${octave}`;
+            row.appendChild(octaveCell);
+
+            Object.keys(frequencies).forEach(note => {
+                const cell = document.createElement('td');
+                cell.textContent = frequencies[note][octave].toFixed(2);
+                row.appendChild(cell);
+            });
+
+            tableBody.appendChild(row);
+        }
+    }
+
+    // Initial render with default tuning 440 Hz
+    renderTable();
+</script>
+</body>
+</html>
